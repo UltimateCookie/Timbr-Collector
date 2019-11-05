@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stamp } from '../../stamp';
-import { FAKE_STAMPS } from '../../test-fake-stamps';
 import { NavController } from '@ionic/angular';
-import { NewStampPage } from '../../stamp-creation/new-stamp/new-stamp.page'
+import { StampService } from '../../stamp.service';
 
 @Component({
   selector: 'app-stamps',
@@ -10,12 +9,14 @@ import { NewStampPage } from '../../stamp-creation/new-stamp/new-stamp.page'
   styleUrls: ['./stamps.component.scss'],
 })
 export class StampsComponent implements OnInit {
-    stamps = FAKE_STAMPS;
+    stamps: Stamp[];
     selectedStamp : Stamp;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, private stampService: StampService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getStamps();
+  }
 
   selectStamp(stamp: Stamp): void {
     this.selectedStamp = stamp;
@@ -27,6 +28,11 @@ export class StampsComponent implements OnInit {
 
   changeFavStatus(): void {
     this.selectedStamp.fav = !this.selectedStamp.fav;
+  }
+
+  getStamps(): void {
+    this.stampService.getStamps()
+        .subscribe(stamps => this.stamps = stamps);
   }
 
 }
