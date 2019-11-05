@@ -7,11 +7,18 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class StampService {
+  stamps: Stamp[] = FAKE_STAMPS;
 
   constructor() { }
 
-  //temporary returns fake stamps untill api rest is available.
+//connect API REST here.
   getStamps(): Observable<Stamp[]> {
-    return of(FAKE_STAMPS);
+    return of(this.stamps);
+  }
+
+  addStamp(stamp: Stamp): boolean {
+    this.stamps.push(stamp);
+    return true;
+
   }
 }
