@@ -7,28 +7,27 @@
   </li>
 </ul>
 
+<ion-button expand="full" color="secondary" (click)="goToNewStampPage()">Add a new stamp</ion-button>
+
 <div *ngIf="selectedStamp">
   <h1>Stamp id: {{selectedStamp.id}}</h1>
   <div>
-    <label> Year: </label>
-    <input [(ngModel)]="selectedStamp.year" placeholder="year"/>
+    <label> Year: {{selectedStamp.year}}</label>
   </div>
   <div>
-    <label> Color: </label>
-    <input [(ngModel)]="selectedStamp.color" placeholder="color"/>
+    <label> Color:  {{selectedStamp.color}}</label>
   </div>
   <div>
-    <label> Fiscal: </label>
-    <input [(ngModel)]="selectedStamp.fiscal" placeholder="fiscal"/>
+    <label> Fiscal:  {{selectedStamp.fiscal}}</label>
   </div>
   <div>
-    <label> Postal: </label>
-    <input [(ngModel)]="selectedStamp.postal" placeholder="postal"/>
+    <label> Postal:  {{selectedStamp.postal}}</label>
   </div>
   <div>
-    <label> Picture: </label>
-    <input [(ngModel)]="selectedStamp.picture" placeholder="picture"/>
+    <label> Picture:  {{selectedStamp.picture}}</label>
   </div>
+  <ion-button *ngIf="!selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Set Favorite 🌟</ion-button>
+  <ion-button *ngIf="selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Remove from Favorites 🌟</ion-button>
 </div>
 
 

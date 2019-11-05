@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add a new Stamp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <label> Year: </label>
+    <input [(ngModel)]="stampToBeCreated.year" placeholder="year"/>
+  </div>
+  <div>
+    <label> Color: </label>
+    <input [(ngModel)]="stampToBeCreated.color" placeholder="color"/>
+  </div>
+  <div>
+    <label> Fiscal: </label>
+    <input [(ngModel)]="stampToBeCreated.fiscal" placeholder="fiscal"/>
+  </div>
+  <div>
+    <label> Postal: </label>
+    <input [(ngModel)]="stampToBeCreated.postal" placeholder="postal"/>
+  </div>
+  <div>
+    <label> Picture: </label>
+    <input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"/>
+  </div>
+
+  <ion-button color="success" (click)="add()">Add</ion-button>
+  <ion-button color="danger" (click)="cancel()">Cancel</ion-button>
+
+</ion-content>
+
+
