@@ -1,0 +1,35 @@
+<h1>My Stamps</h1>
+<ul class="stamps">
+  <li *ngFor="let stamp of stamps" [class.selected]="stamp === selectedStamp" (click)="selectStamp(stamp)">
+      <span>id: </span>{{stamp.id}}
+      <img src='../../../assets/empty_stamp.jpg' alt="Img_Stamp">
+      <span *ngIf="stamp.fav"> 🌟 </span>
+  </li>
+</ul>
+
+<div *ngIf="selectedStamp">
+  <h1>Stamp id: {{selectedStamp.id}}</h1>
+  <div>
+    <label> Year: </label>
+    <input [(ngModel)]="selectedStamp.year" placeholder="year"/>
+  </div>
+  <div>
+    <label> Color: </label>
+    <input [(ngModel)]="selectedStamp.color" placeholder="color"/>
+  </div>
+  <div>
+    <label> Fiscal: </label>
+    <input [(ngModel)]="selectedStamp.fiscal" placeholder="fiscal"/>
+  </div>
+  <div>
+    <label> Postal: </label>
+    <input [(ngModel)]="selectedStamp.postal" placeholder="postal"/>
+  </div>
+  <div>
+    <label> Picture: </label>
+    <input [(ngModel)]="selectedStamp.picture" placeholder="picture"/>
+  </div>
+</div>
+
+
+

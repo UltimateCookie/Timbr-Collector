@@ -1,0 +1,15 @@
+.stamps li {
+    cursor: pointer;
+    background-color: gainsboro;
+    margin: 0.7em;
+    position: relative;
+}
+
+.stamps li.selected {
+    background-color: burlywood;
+}
+
+img {
+    width:28px;
+    height:40px;
+}
