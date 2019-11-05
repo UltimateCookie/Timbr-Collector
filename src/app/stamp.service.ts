@@ -11,7 +11,6 @@ export class StampService {
 
   constructor() { }
 
-//connect API REST here.
   getStamps(): Observable<Stamp[]> {
     return of(this.stamps);
   }
@@ -21,4 +20,6 @@ export class StampService {
     return true;
 
   }
+
+  //use HTTP to conect to API REST here
 }

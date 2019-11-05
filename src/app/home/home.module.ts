@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { FilterPipe } from './stamps/filter.pipe';
 import { StampsComponent } from './stamps/stamps.component';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { StampsComponent } from './stamps/stamps.component';
   ],
   declarations: [
   HomePage,
-  StampsComponent
+  StampsComponent,
+  FilterPipe
   ]
 })
 export class HomePageModule {}

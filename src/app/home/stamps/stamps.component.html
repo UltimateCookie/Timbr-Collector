@@ -1,6 +1,17 @@
+<h1>Filters</h1>
+<input [(ngModel)]="idFilter" placeholder="filter id">
+<input [(ngModel)]="yearFilter" placeholder="filter year">
+
+<ion-label>Fiscal</ion-label>
+<input type="checkbox" [(ngModel)]="fiscalFilter" checked/>
+
+<ion-label>Postal</ion-label>
+<input type="checkbox" [(ngModel)]="postalFilter" checked/>
+
+
 <h1>My Stamps</h1>
 <ul class="stamps">
-  <li *ngFor="let stamp of stamps" [class.selected]="stamp === selectedStamp" (click)="selectStamp(stamp)">
+  <li *ngFor="let stamp of stamps | filter : idFilter:yearFilter:fiscalFilter:postalFilter" [class.selected]="stamp === selectedStamp" (click)="selectStamp(stamp)">
       <span>id: </span>{{stamp.id}}
       <img src='../../../assets/empty_stamp.jpg' alt="Img_Stamp">
       <span *ngIf="stamp.fav"> 🌟 </span>
@@ -12,19 +23,19 @@
 <div *ngIf="selectedStamp">
   <h1>Stamp id: {{selectedStamp.id}}</h1>
   <div>
-    <label> Year: {{selectedStamp.year}}</label>
+    <ion-label> Year: {{selectedStamp.year}}</ion-label>
   </div>
   <div>
-    <label> Color:  {{selectedStamp.color}}</label>
+    <ion-label> Color:  {{selectedStamp.color}}</ion-label>
   </div>
   <div>
-    <label> Fiscal:  {{selectedStamp.fiscal}}</label>
+    <ion-label> Fiscal:  {{selectedStamp.fiscal}}</ion-label>
   </div>
   <div>
-    <label> Postal:  {{selectedStamp.postal}}</label>
+    <ion-label> Postal:  {{selectedStamp.postal}}</ion-label>
   </div>
   <div>
-    <label> Picture:  {{selectedStamp.picture}}</label>
+    <ion-label> Picture:  {{selectedStamp.picture}}</ion-label>
   </div>
   <ion-button *ngIf="!selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Set Favorite 🌟</ion-button>
   <ion-button *ngIf="selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Remove from Favorites 🌟</ion-button>
