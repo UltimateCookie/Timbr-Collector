@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 
 import { FilterPipe } from './stamps/filter.pipe';
 import { StampsComponent } from './stamps/stamps.component';
+import { ModalStampDetailsPage } from './modal-stamp-details/modal-stamp-details.page';
 
 @NgModule({
   imports: [
@@ -24,7 +25,9 @@ import { StampsComponent } from './stamps/stamps.component';
   declarations: [
   HomePage,
   StampsComponent,
+  ModalStampDetailsPage,
   FilterPipe
-  ]
+  ],
+  entryComponents: [ModalStampDetailsPage]
 })
 export class HomePageModule {}

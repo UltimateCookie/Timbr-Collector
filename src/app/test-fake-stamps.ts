@@ -21,5 +21,245 @@ export const FAKE_STAMPS: Stamp[] = [
         postal: false,
         year: 2007,
         fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
+    },
+    {
+        id: 2,
+        color: null,
+        country: "EN",
+        fiscal: false,
+        picture: null,
+        postal: false,
+        year: 2007,
+        fav: true
     }
 ];

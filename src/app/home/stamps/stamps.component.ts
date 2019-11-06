@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Stamp } from '../../stamp';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { StampService } from '../../stamp.service';
+import { ModalStampDetailsPage } from '../modal-stamp-details/modal-stamp-details.page'
 
 @Component({
   selector: 'app-stamps',
@@ -12,7 +13,7 @@ export class StampsComponent implements OnInit {
     stamps: Stamp[];
     selectedStamp : Stamp;
 
-  constructor(public navCtrl: NavController, private stampService: StampService) { }
+  constructor(public navCtrl: NavController, private stampService: StampService, public modalController: ModalController) { }
 
   ngOnInit() {
     this.getStamps();
@@ -33,6 +34,16 @@ export class StampsComponent implements OnInit {
   getStamps(): void {
     this.stampService.getStamps()
         .subscribe(stamps => this.stamps = stamps);
+  }
+
+  async presentModal(stamp: Stamp) {
+    const modal = await this.modalController.create({
+      component: ModalStampDetailsPage,
+      componentProps: {
+        'selectedStamp': stamp
+      }
+    });
+    return await modal.present();
   }
 
 }

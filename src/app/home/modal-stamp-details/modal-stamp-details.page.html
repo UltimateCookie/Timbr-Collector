@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modalStampDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1>Stamp id: {{selectedStamp.id}}</h1>
+    <div>
+      <ion-label> Year: {{selectedStamp.year}}</ion-label>
+    </div>
+    <div>
+      <ion-label> Color: {{selectedStamp.color}}</ion-label>
+    </div>
+    <div>
+      <ion-label> Fiscal: {{selectedStamp.fiscal}}</ion-label>
+    </div>
+    <div>
+      <ion-label> Postal: {{selectedStamp.postal}}</ion-label>
+    </div>
+    <div>
+      <ion-label> Picture: {{selectedStamp.picture}}</ion-label>
+    </div>
+    <ion-button *ngIf="!selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Set Favorite 🌟
+    </ion-button>
+    <ion-button *ngIf="selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Remove from Favorites
+      🌟</ion-button>
+<ion-button size="small" color="secondary" (click)="dismiss()">Dismiss
+    🌟</ion-button>
+</ion-content>
