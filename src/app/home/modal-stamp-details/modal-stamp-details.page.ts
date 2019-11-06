@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stamp } from 'src/app/stamp';
 import { ModalController } from '@ionic/angular';
+import { StampService } from 'src/app/stamp.service';
 
 @Component({
   selector: 'app-modal-stamp-details',
@@ -10,7 +11,7 @@ import { ModalController } from '@ionic/angular';
 export class ModalStampDetailsPage implements OnInit {
 
   @Input() selectedStamp: Stamp;
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private stampService: StampService) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,11 @@ export class ModalStampDetailsPage implements OnInit {
     this.modalController.dismiss({
       'dismissed': true
     });
+  }
+
+  changeFavStatus() {
+    this.selectedStamp.fav = !this.selectedStamp.fav;
+    this.stampService.setFavStatus(this.selectedStamp.id, this.selectedStamp.fav);
   }
 
 }

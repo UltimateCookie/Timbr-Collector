@@ -5,30 +5,44 @@
 </ion-header>
 
 <ion-content>
-  <div>
-    <ion-label position="stacked"> Year: </ion-label>
-    <ion-input [(ngModel)]="stampToBeCreated.year" placeholder="year"></ion-input>
-  </div>
-  <div>
-    <ion-label position="stacked"> Color: </ion-label >
-    <ion-input [(ngModel)]="stampToBeCreated.color" placeholder="color"></ion-input>
-  </div>
-  <div>
-    <ion-label position="stacked"> Fiscal: </ion-label>
-    <ion-input [(ngModel)]="stampToBeCreated.fiscal" placeholder="fiscal"></ion-input>
-  </div>
-  <div>
-    <ion-label position="stacked"> Postal: </ion-label>
-    <ion-input [(ngModel)]="stampToBeCreated.postal" placeholder="postal"></ion-input>
-  </div>
-  <div>
-    <ion-label position="stacked"> Picture: </ion-label>
-    <ion-input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"></ion-input>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label position="stacked"> Year: </ion-label>
+        <ion-input [(ngModel)]="stampToBeCreated.year" placeholder="year"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-label position="stacked"> Country: </ion-label>
+        <ion-input [(ngModel)]="stampToBeCreated.country" placeholder="country"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label> Fiscal: </ion-label>
+        <ion-checkbox [(ngModel)]="stampToBeCreated.fiscal" value="fiscal"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-label> Postal: </ion-label>
+        <ion-checkbox [(ngModel)]="stampToBeCreated.postal" value="postal"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label position="stacked"> Color: </ion-label>
+        <ion-input [(ngModel)]="stampToBeCreated.color" placeholder="color"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label position="stacked"> Picture: </ion-label>
+        <ion-button color="success" (click)="add()">TAKE PICTURE</ion-button>
+        <ion-input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-button color="success" (click)="add()">Add</ion-button>
   <ion-button color="danger" (click)="cancel()">Cancel</ion-button>
 
 </ion-content>
-
-

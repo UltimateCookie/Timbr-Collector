@@ -21,5 +21,9 @@ export class StampService {
 
   }
 
-  //use HTTP to conect to API REST here
+  setFavStatus(id: number, fav: boolean): void { //todo: passer le stamp directement.
+    this.stamps[id-1].fav = fav;
+  }
+
+  //connect to API REST here
 }
