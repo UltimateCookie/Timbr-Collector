@@ -13,7 +13,9 @@ export class StampsComponent implements OnInit {
     stamps: Stamp[];
     favFilter: boolean;
 
-  constructor(public navCtrl: NavController, private stampService: StampService, public modalController: ModalController) { }
+  constructor(public navCtrl: NavController,
+     private stampService: StampService,
+     public modalController: ModalController) { }
 
   ngOnInit() {
     this.stampService.stampsSubject.subscribe( (stamps: any[]) => {this.stamps = stamps;});

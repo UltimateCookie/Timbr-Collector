@@ -16,9 +16,9 @@ export class NewStampPage implements OnInit {
 
   stampToBeCreated: Stamp;
   isBrowser: boolean = false;
+  showWebcam: boolean = true;
   // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
-  showWebcam: boolean = true;
   
   constructor(public navCtrl: NavController,
      private stampService: StampService,
@@ -80,6 +80,9 @@ export class NewStampPage implements OnInit {
     this.showWebcam = !this.showWebcam;
   }
 
+  /**
+   * Add new stamp to stamps array
+   */
   add(): void {
     this.stampToBeCreated.id = this.stampService.stamps.length+1;
     this.stampService.addStamp(this.stampToBeCreated);

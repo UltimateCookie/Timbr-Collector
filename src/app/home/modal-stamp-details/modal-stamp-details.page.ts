@@ -17,13 +17,14 @@ export class ModalStampDetailsPage implements OnInit {
   }
 
   dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
       'dismissed': true
     });
   }
 
+  /**
+   * Set or unset as favorite
+   */
   changeFavStatus() {
     this.selectedStamp.fav = !this.selectedStamp.fav;
     this.stampService.setFavStatus(this.selectedStamp.id, this.selectedStamp.fav);

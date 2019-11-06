@@ -1,19 +1,24 @@
 <h3>Filters</h3>
 <ion-grid>
+
   <ion-row>
     <ion-col>
-    <ion-select placeholder="Country filter" [(ngModel)]="countryFilter">
+      <ion-select placeholder="Country filter" [(ngModel)]="countryFilter">
         <ion-select-option value=""></ion-select-option>
-        <ion-select-option *ngFor="let stamp of stamps | unique : 'country'" value="{{stamp.country}}">{{stamp.country}}</ion-select-option>
-    </ion-select>
+        <ion-select-option *ngFor="let stamp of stamps | unique : 'country'" value="{{stamp.country}}">{{stamp.country}}
+        </ion-select-option>
+      </ion-select>
     </ion-col>
+
     <ion-col>
-        <ion-select placeholder="Year filter" [(ngModel)]="yearFilter">
-            <ion-select-option value=""></ion-select-option>
-            <ion-select-option *ngFor="let stamp of stamps | unique : 'year'" value={{stamp.year}}>{{stamp.year}}</ion-select-option>
-        </ion-select>
+      <ion-select placeholder="Year filter" [(ngModel)]="yearFilter">
+        <ion-select-option value=""></ion-select-option>
+        <ion-select-option *ngFor="let stamp of stamps | unique : 'year'" value={{stamp.year}}>{{stamp.year}}
+        </ion-select-option>
+      </ion-select>
     </ion-col>
   </ion-row>
+
   <ion-row>
     <ion-col>
       <ion-label>Fiscal: </ion-label>
@@ -28,16 +33,18 @@
       <ion-checkbox [(ngModel)]="favFilter"></ion-checkbox>
     </ion-col>
   </ion-row>
+
 </ion-grid>
 
 
 <h3>Collection</h3>
 <ion-button expand="block" (click)="goToNewStampPage()">Add a new stamp</ion-button>
 <ion-grid>
+
   <ion-row>
     <ion-col size="4" *ngFor="let stamp of stamps |
-          filter : countryFilter:yearFilter:fiscalFilter:postalFilter:favFilter" [class.selected]="stamp === selectedStamp"
-      (click)="presentModal(stamp)">
+          filter : countryFilter:yearFilter:fiscalFilter:postalFilter:favFilter"
+      [class.selected]="stamp === selectedStamp" (click)="presentModal(stamp)">
 
       <ion-card style="background-image: url(../../../assets/empty_stamp.jpg);" *ngIf="!stamp.picture">
         <ion-card-header>
@@ -48,7 +55,11 @@
         </ion-card-content>
       </ion-card>
 
-      <!-- <img src="{{stamp.picture}}" *ngIf="stamp.picture"> -->
+      <!--working display picture:
+
+         <img src="{{stamp.picture}}" *ngIf="stamp.picture">
+         
+        -->
       <ion-card style="background-image: url('{{stamp.picture}}');" *ngIf="stamp.picture">
         <ion-card-header>
           <ion-card-title>{{stamp.country}}, {{stamp.year}}</ion-card-title>
@@ -60,4 +71,5 @@
 
     </ion-col>
   </ion-row>
+
 </ion-grid>

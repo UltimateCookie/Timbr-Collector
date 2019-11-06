@@ -6,6 +6,7 @@
 
 <ion-content>
   <ion-grid>
+
     <ion-row>
       <ion-col>
         <ion-label position="stacked"> Year: </ion-label>
@@ -16,6 +17,7 @@
         <ion-input [(ngModel)]="stampToBeCreated.country" placeholder="country"></ion-input>
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-label> Fiscal: </ion-label>
@@ -33,15 +35,15 @@
         <ion-input [(ngModel)]="stampToBeCreated.color" placeholder="color"></ion-input>
       </ion-col>
     </ion-row>
+
     <ion-row>
       <ion-col>
         <ion-label position="stacked"> Picture: </ion-label>
-        
         <ion-button color="success" (click)="takePicture()">TAKE PICTURE</ion-button>
         <img src="{{stampToBeCreated.picture}}" *ngIf="stampToBeCreated.picture">
-        
       </ion-col>
     </ion-row>
+    
   </ion-grid>
 
   <ion-button color="success" (click)="add()">Add</ion-button>
