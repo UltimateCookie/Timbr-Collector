@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Stamp } from '../../stamp';
 import { NavController, ModalController } from '@ionic/angular';
 import { StampService } from '../../stamp.service';
-import { ModalStampDetailsPage } from '../modal-stamp-details/modal-stamp-details.page'
-import { Transform } from 'stream';
+import { ModalStampDetailsPage } from '../modal-stamp-details/modal-stamp-details.page';
 
 @Component({
   selector: 'app-stamps',
