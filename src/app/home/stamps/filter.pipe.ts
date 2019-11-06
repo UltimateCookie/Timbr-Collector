@@ -1,15 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Stamp } from 'src/app/stamp';
+import * as _ from 'lodash'; 
 @Pipe({
   name: 'filter',
   pure: false
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: Stamp[], idFilter: string, yearFilter: string, fiscalFilter: boolean, postalFilter: boolean, favFilter: boolean): any[] {
+  transform(items: Stamp[], countryFilter: string, yearFilter: string, fiscalFilter: boolean, postalFilter: boolean, favFilter: boolean): any[] {
 
     if (items && items.length) {
       return items.filter(item => {
-        if (idFilter && item.id.toString() !== idFilter) {
+        if (countryFilter && item.country.toString().toLowerCase() !== countryFilter.toLowerCase()) {
           return false;
         }
 
@@ -35,4 +36,18 @@ export class FilterPipe implements PipeTransform {
 
     return items;
   }
+}
+
+
+@Pipe({
+  name: 'unique',
+  pure: false
+})
+export class UniquePipe implements PipeTransform {
+    transform(value: Stamp[]): any{
+        if(value!== undefined && value!== null){
+            return _.uniqBy(value, 'country');
+        }
+        return value;
+    }
 }

@@ -36,8 +36,10 @@
     <ion-row>
       <ion-col>
         <ion-label position="stacked"> Picture: </ion-label>
-        <ion-button color="success" (click)="add()">TAKE PICTURE</ion-button>
-        <ion-input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"></ion-input>
+
+        <ion-button color="success" (click)="takePicture()">TAKE PICTURE</ion-button>
+        <img src="{{stampToBeCreated.picture}}" *ngIf="stampToBeCreated.picture">
+        
       </ion-col>
     </ion-row>
   </ion-grid>

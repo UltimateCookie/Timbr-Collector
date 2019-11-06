@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 
 import { FilterPipe } from './stamps/filter.pipe';
+import { UniquePipe } from './stamps/filterunique.pipe';
 import { StampsComponent } from './stamps/stamps.component';
 import { ModalStampDetailsPage } from './modal-stamp-details/modal-stamp-details.page';
 
@@ -26,7 +27,8 @@ import { ModalStampDetailsPage } from './modal-stamp-details/modal-stamp-details
   HomePage,
   StampsComponent,
   ModalStampDetailsPage,
-  FilterPipe
+  FilterPipe,
+  UniquePipe
   ],
   entryComponents: [ModalStampDetailsPage]
 })
