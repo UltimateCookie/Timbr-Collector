@@ -1,18 +1,36 @@
 <h3>Filters</h3>
-<input [(ngModel)]="idFilter" placeholder="filter id">
-<input [(ngModel)]="yearFilter" placeholder="filter year">
-
-<ion-label>Fiscal</ion-label>
-<input type="checkbox" [(ngModel)]="fiscalFilter" checked />
-
-<ion-label>Postal</ion-label>
-<input type="checkbox" [(ngModel)]="postalFilter" checked />
-
-<h3>Collection</h3>
 <ion-grid>
   <ion-row>
-    <ion-col size="3" *ngFor="let stamp of stamps |
-          filter : idFilter:yearFilter:fiscalFilter:postalFilter" [class.selected]="stamp === selectedStamp"
+    <ion-col>
+      <ion-input type="text" [(ngModel)]="idFilter" placeholder="filter id"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="text" [(ngModel)]="yearFilter" placeholder="filter year"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-label>Fiscal: </ion-label>
+      <ion-checkbox [(ngModel)]="fiscalFilter"></ion-checkbox>
+    </ion-col>
+    <ion-col>
+      <ion-label>Postal: </ion-label>
+      <ion-checkbox [(ngModel)]="postalFilter"></ion-checkbox>
+    </ion-col>
+    <ion-col>
+        <ion-label>Favorites: </ion-label>
+        <ion-checkbox [(ngModel)]="favFilter"></ion-checkbox>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<h3>Collection</h3>
+<ion-button expand="block" (click)="goToNewStampPage()">Add a new stamp</ion-button>
+<ion-grid>
+  <ion-row>
+    <ion-col size="4" *ngFor="let stamp of stamps |
+          filter : idFilter:yearFilter:fiscalFilter:postalFilter:favFilter" [class.selected]="stamp === selectedStamp"
       (click)="presentModal(stamp)">
 
       <ion-card style="background-image: url(../../../assets/empty_stamp.jpg);">
@@ -20,33 +38,9 @@
           <ion-card-title>{{stamp.country}}, {{stamp.year}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
+          <span *ngIf="stamp.fav">🌟</span>
         </ion-card-content>
       </ion-card>
     </ion-col>
   </ion-row>
 </ion-grid>
-
-<ion-button expand="full" color="secondary" (click)="goToNewStampPage()">Add a new stamp</ion-button>
-
-<div *ngIf="selectedStamp">
-  <h1>Stamp id: {{selectedStamp.id}}</h1>
-  <div>
-    <ion-label> Year: {{selectedStamp.year}}</ion-label>
-  </div>
-  <div>
-    <ion-label> Color: {{selectedStamp.color}}</ion-label>
-  </div>
-  <div>
-    <ion-label> Fiscal: {{selectedStamp.fiscal}}</ion-label>
-  </div>
-  <div>
-    <ion-label> Postal: {{selectedStamp.postal}}</ion-label>
-  </div>
-  <div>
-    <ion-label> Picture: {{selectedStamp.picture}}</ion-label>
-  </div>
-  <ion-button *ngIf="!selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Set Favorite 🌟
-  </ion-button>
-  <ion-button *ngIf="selectedStamp.fav" size="small" color="secondary" (click)="changeFavStatus()">Remove from Favorites
-    🌟</ion-button>
-</div>

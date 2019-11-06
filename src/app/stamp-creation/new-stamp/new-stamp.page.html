@@ -6,24 +6,24 @@
 
 <ion-content>
   <div>
-    <label> Year: </label>
-    <input [(ngModel)]="stampToBeCreated.year" placeholder="year"/>
+    <ion-label position="stacked"> Year: </ion-label>
+    <ion-input [(ngModel)]="stampToBeCreated.year" placeholder="year"></ion-input>
   </div>
   <div>
-    <label> Color: </label>
-    <input [(ngModel)]="stampToBeCreated.color" placeholder="color"/>
+    <ion-label position="stacked"> Color: </ion-label >
+    <ion-input [(ngModel)]="stampToBeCreated.color" placeholder="color"></ion-input>
   </div>
   <div>
-    <label> Fiscal: </label>
-    <input [(ngModel)]="stampToBeCreated.fiscal" placeholder="fiscal"/>
+    <ion-label position="stacked"> Fiscal: </ion-label>
+    <ion-input [(ngModel)]="stampToBeCreated.fiscal" placeholder="fiscal"></ion-input>
   </div>
   <div>
-    <label> Postal: </label>
-    <input [(ngModel)]="stampToBeCreated.postal" placeholder="postal"/>
+    <ion-label position="stacked"> Postal: </ion-label>
+    <ion-input [(ngModel)]="stampToBeCreated.postal" placeholder="postal"></ion-input>
   </div>
   <div>
-    <label> Picture: </label>
-    <input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"/>
+    <ion-label position="stacked"> Picture: </ion-label>
+    <ion-input [(ngModel)]="stampToBeCreated.picture" placeholder="picture"></ion-input>
   </div>
 
   <ion-button color="success" (click)="add()">Add</ion-button>

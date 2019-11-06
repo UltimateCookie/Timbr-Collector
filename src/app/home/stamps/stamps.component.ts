@@ -3,6 +3,7 @@ import { Stamp } from '../../stamp';
 import { NavController, ModalController } from '@ionic/angular';
 import { StampService } from '../../stamp.service';
 import { ModalStampDetailsPage } from '../modal-stamp-details/modal-stamp-details.page'
+import { Transform } from 'stream';
 
 @Component({
   selector: 'app-stamps',
@@ -11,7 +12,6 @@ import { ModalStampDetailsPage } from '../modal-stamp-details/modal-stamp-detail
 })
 export class StampsComponent implements OnInit {
     stamps: Stamp[];
-    selectedStamp : Stamp;
 
   constructor(public navCtrl: NavController, private stampService: StampService, public modalController: ModalController) { }
 
@@ -19,16 +19,8 @@ export class StampsComponent implements OnInit {
     this.getStamps();
   }
 
-  selectStamp(stamp: Stamp): void {
-    this.selectedStamp = stamp;
-  }
-
   goToNewStampPage(): void {
     this.navCtrl.navigateForward("new-stamp");
-  }
-
-  changeFavStatus(): void {
-    this.selectedStamp.fav = !this.selectedStamp.fav;
   }
 
   getStamps(): void {
