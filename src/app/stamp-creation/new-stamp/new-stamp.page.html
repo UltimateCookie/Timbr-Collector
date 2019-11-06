@@ -36,7 +36,7 @@
     <ion-row>
       <ion-col>
         <ion-label position="stacked"> Picture: </ion-label>
-
+        
         <ion-button color="success" (click)="takePicture()">TAKE PICTURE</ion-button>
         <img src="{{stampToBeCreated.picture}}" *ngIf="stampToBeCreated.picture">
         
@@ -46,5 +46,10 @@
 
   <ion-button color="success" (click)="add()">Add</ion-button>
   <ion-button color="danger" (click)="cancel()">Cancel</ion-button>
+
+  <webcam [height]="500" [width]="500" [trigger]="triggerObservable"
+   (imageCapture)="handleImage($event)"
+    *ngIf="isBrowser && showWebcam"
+     [imageQuality]="1"></webcam>
 
 </ion-content>

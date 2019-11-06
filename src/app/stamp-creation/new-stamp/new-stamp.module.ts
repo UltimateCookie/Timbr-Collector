@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { NewStampPage } from './new-stamp.page';
+import {WebcamModule} from 'ngx-webcam';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    WebcamModule,
     RouterModule.forChild(routes)
   ],
   declarations: [NewStampPage]
