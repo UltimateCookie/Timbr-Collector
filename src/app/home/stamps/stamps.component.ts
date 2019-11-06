@@ -24,11 +24,6 @@ export class StampsComponent implements OnInit {
     this.navCtrl.navigateForward("new-stamp");
   }
 
-  // getStamps(): void {
-  //   this.stampService.getStamps()
-  //       .subscribe(stamps => {this.stamps = stamps;});
-  // }
-
   async presentModal(stamp: Stamp) {
     const modal = await this.modalController.create({
       component: ModalStampDetailsPage,
@@ -37,12 +32,6 @@ export class StampsComponent implements OnInit {
       }
     });
     return await modal.present();
-  }
-
-  checkFav() {
-    this.favFilter = !this.favFilter;
-  }
-
-  
+  }  
 
 }
