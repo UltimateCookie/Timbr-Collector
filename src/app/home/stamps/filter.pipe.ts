@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Stamp } from 'src/app/stamp';
-import * as _ from 'lodash'; 
 @Pipe({
   name: 'filter',
   pure: false
@@ -38,16 +37,3 @@ export class FilterPipe implements PipeTransform {
   }
 }
 
-
-@Pipe({
-  name: 'unique',
-  pure: false
-})
-export class UniquePipe implements PipeTransform {
-    transform(value: Stamp[]): any{
-        if(value!== undefined && value!== null){
-            return _.uniqBy(value, 'country');
-        }
-        return value;
-    }
-}

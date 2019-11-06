@@ -3,12 +3,14 @@
   <ion-row>
     <ion-col>
     <ion-select placeholder="Country filter" [(ngModel)]="countryFilter">
+        <ion-select-option value=""></ion-select-option>
         <ion-select-option *ngFor="let stamp of stamps | unique : 'country'" value="{{stamp.country}}">{{stamp.country}}</ion-select-option>
     </ion-select>
     </ion-col>
     <ion-col>
-        <ion-select placeholder="Year filter" [(ngModel)]="year">
-            <ion-select-option *ngFor="let stamp of stamps | unique : 'year'" value="{{stamp.year}}">{{stamp.year}}</ion-select-option>
+        <ion-select placeholder="Year filter" [(ngModel)]="yearFilter">
+            <ion-select-option value=""></ion-select-option>
+            <ion-select-option *ngFor="let stamp of stamps | unique : 'year'" value={{stamp.year}}>{{stamp.year}}</ion-select-option>
         </ion-select>
     </ion-col>
   </ion-row>
